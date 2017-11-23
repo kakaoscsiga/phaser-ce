@@ -1209,12 +1209,12 @@ Phaser.InputHandler.prototype = {
         {
             if (this.allowHorizontalDrag)
             {
-                this.sprite.cameraOffset.x = px - this.game.camera.x;
+                this.sprite.cameraOffset.x = pointerLocalCoord.x * game.camera.scale.x + this._dragPoint.x + this.dragOffset.x - this.game.camera.x;
             }
 
             if (this.allowVerticalDrag)
             {
-                this.sprite.cameraOffset.y = py - this.game.camera.y;
+                this.sprite.cameraOffset.y = pointerLocalCoord.y * game.camera.scale.y + this._dragPoint.y + this.dragOffset.y - this.game.camera.y;
             }
 
             if (this.boundsRect)
